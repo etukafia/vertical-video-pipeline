@@ -1,0 +1,36 @@
+{
+  "name": "remotion-video-factory",
+  "version": "1.0.0",
+  "description": "Automated vertical video generator",
+  "scripts": {
+    "start": "remotion preview src/index.ts",
+    "generate-all": "tsx -r dotenv/config scripts/prebuild.ts && tsx -r dotenv/config scripts/render.ts && tsx -r dotenv/config scripts/postprocess.ts",
+    "preview": "set RENDER_PROFILE=preview&& npm run generate-all",
+    "studio": "remotion studio"
+  },
+  "dependencies": {
+    "@google-cloud/text-to-speech": "^6.4.1",
+    "@google/genai": "latest",
+    "dotenv": "^16.4.5",
+    "ffmpeg-static": "^5.2.0",
+    "ffprobe-static": "^3.1.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "music-metadata": "^11.12.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.245",
+    "tsx": "^4.21.0",
+    "winston": "^3.19.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.245",
+    "@types/fluent-ffmpeg": "^2.1.27",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "npm@10.5.0"
+}
